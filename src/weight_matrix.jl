@@ -32,8 +32,8 @@ function block_bootstrap_estimator(wm::WeightMatrix)
     return W
 end
 
-function(wm::WeightMatrix)(algo=block_bootstrap_estimator)
-    return block_bootstrap_estimator(wm)
+function(wm::WeightMatrix)(algo)
+    return algo(wm)
 end
 
 function select_moments(log_prices)
